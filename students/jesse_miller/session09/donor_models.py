@@ -10,41 +10,41 @@ class DonorTools:
     So this class is implemented, however I never got any of the calls to work
     in the actual program, which is disappointing.
     '''
-
+#
     def __init__(self, name):
         self.name = name
         self.donations = [] #?  We'll try it.
-
-
+#
+#
     def donation_add(self, new_donation):
         '''
         This should append donations to the list
         '''
         self.donations.append(new_donation)
-
+#
     @property
     def donation_count(self):
         '''
         Fairly obvious, counts the number of donations
         '''
         return len(self.donations)
-
-
+#
+#
     @property
     def donation_total(self):
         '''
         Again, obvious, adds the donations up
         '''
         return sum(self.donations)
-
-
+#
+#
     @property
     def donation_average(self):
         '''
         Averages the donations
         '''
         return self.donation_total / self.donation_count
-
+#
 
 ################################################################################
 '''
@@ -127,18 +127,6 @@ class DonorCollection:
         '''
         del self.donors_dict[current_donor]
         return self.donors_dict
-
-
-#    def create_report(self):
-#        '''
-#        Last but not least, the report function
-#        '''
-#        reporting = []
-#        #pylint: disable=C0103
-#        for k, v in self.donors_dict.items():
-#            reporting.append([k, (sum(v)), (len(v)), (sum(v) / len(v))])
-#            reporting.sort(key=lambda d: d[1], reverse=True)
-#        return reporting
 
 
 ################################################################################

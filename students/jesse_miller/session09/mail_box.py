@@ -6,9 +6,6 @@ the tests so the likelihood of human error here is high, you know?).
 '''
 import os
 import datetime
-#from donor_models import DonorCollection
-#pylint: disable=C0103
-#alms = DonorCollection()
 '''
 Module imports
 '''
@@ -69,6 +66,16 @@ class MailBox:
         '''
         for k in donor_tools:
             MailBox.mail_send(donor_tools, k)
+
+
+    @staticmethod
+    def mail_send_one(donor_tools, donor):
+        '''
+        This should send a single mail, however there's an iteration for some
+        reason, filing this as a bug that I'll need to address in the future.
+        '''
+        if donor in donor_tools:
+            MailBox.mail_send(donor_tools, donor)
 
 
     @staticmethod

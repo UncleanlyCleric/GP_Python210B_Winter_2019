@@ -4,7 +4,6 @@ This is the command interface for the mailroom.  Now that I know that donor
 manipulations work correctly (At least according to pytest.  I mean, I wrote
 the tests so the likelihood of human error here is high, you know?).
 '''
-#import os
 import sys
 from donor_models import DonorCollection
 from mail_box import MailBox
@@ -70,7 +69,7 @@ class MailRoom:
             else:
                 try:
                     donor_tools = alms.find_donor(donor)
-                    MailBox.mail_send(donor_tools, donor)
+                    MailBox.mail_send_one(donor_tools, donor)
                 except KeyError:
                     print("Not found")
         except (KeyboardInterrupt, EOFError, ValueError):
